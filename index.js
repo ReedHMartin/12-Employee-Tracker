@@ -1,7 +1,12 @@
 // TODO: Import required packages
 // - Import inquirer
+const inquirer = require("inquirer");
 // - Import console.table
+const cTable = require("console.table");
 // - Import the Department, Employee, and Role classes
+const Department = require("./lib/Department");
+const Employee = require("./lib/Employee");
+const Role = require("./lib/Role");
 
 // TODO: Set up inquirer prompt configurations
 
