@@ -1,4 +1,4 @@
-// TODO: Import required packages
+// - Import required packages
 // - Import inquirer
 const inquirer = require("inquirer");
 // - Import console.table
@@ -8,7 +8,24 @@ const Department = require("./lib/Department");
 const Employee = require("./lib/Employee");
 const Role = require("./lib/Role");
 
-// TODO: Set up inquirer prompt configurations
+// Set up inquirer prompt configurations for main menu
+const mainMenuPrompt = [
+    {
+      type: "list",
+      name: "action",
+      message: "What would you like to do?",
+      choices: [
+        "View All Departments",
+        "View All Roles",
+        "View All Employees",
+        "Add Department",
+        "Add Role",
+        "Add Employee",
+        "Update Employee Role",
+        "Exit",
+      ],
+    },
+  ];
 
 // TODO: Create the function to initialize the application
 
