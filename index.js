@@ -171,7 +171,40 @@ async function init() {
     init();
   }
 
-  // TODO: Create a function to add a role
+// Function to add a role
+async function addRole() {
+  // Prompt for role information
+  const departments = await department.viewAllDepartments();
+  const departmentChoices = departments.map((dept) => ({
+    name: dept.name,
+    value: dept.id,
+  }));
+
+  const { title, salary, departmentId } = await inquirer.prompt([
+    {
+      type: "input",
+      name: "title",
+      message: "Enter the role title:",
+    },
+    {
+      type: "input",
+      name: "salary",
+      message: "Enter the role salary:",
+    },
+    {
+      type: "list",
+      name: "departmentId",
+      message: "Select the department for this role:",
+      choices: departmentChoices,
+    },
+  ]);
+
+  await role.addRole(title, salary, departmentId);
+  console.log("Role added!");
+  init();
+}
+
+
   // TODO: Create a function to add an employee
   // TODO: Create a function to update an employee's role
   
