@@ -17,11 +17,11 @@ VALUES
 -- Insert sample data into the `employee` table
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES
-  ('John', 'Doe', 1, NULL),
-  ('Jane', 'Smith', 2, 1),
-  ('Alice', 'Johnson', 3, 1),
-  ('Bob', 'Brown', 4, 1),
-  ('Charlie', 'Davis', 5, 3),
-  ('David', 'Garcia', 2, 2),
-  ('Ella', 'Hernandez', 5, 3),
-  ('Fiona', 'Martinez', 5, 3);
+  ('Samantha', 'Carter', 1, NULL),
+  ('Daniel', 'Jackson', 2, 1),
+  ('George', 'Hammond', 3, 1),
+  ('Jonas', 'Quinn', 4, 1),
+  ('Cameron', 'Mitchel', 5, 3),
+  ('Hank', 'Landry', 2, 2),
+  ('Janet', 'Fraiser', 5, 3),
+  ('Walter', 'Harriman', 5, 3);
