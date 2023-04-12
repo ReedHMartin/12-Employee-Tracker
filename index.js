@@ -29,19 +29,45 @@ const mainMenuPrompt = [
 
 // Function to initialize the application
 async function init() {
-    // Display the main menu using inquirer prompts and call corresponding functions based on user input
     const { action } = await inquirer.prompt(mainMenuPrompt);
     switch (action) {
-      case "View all departments":
+      case "View All Departments":
         viewAllDepartments();
         break;
-      // ... Other cases for different actions
+      case "View All Roles":
+        viewAllRoles();
+        break;
+      case "View All Employees":
+        viewAllEmployees();
+        break;
+      case "Add Department":
+        addDepartment();
+        break;
+      case "Add Role":
+        addRole();
+        break;
+      case "Add Employee":
+        addEmployee();
+        break;
+      case "Update Employee Role":
+        updateEmployeeRole();
+        break;
+      case "Exit":
+        process.exit();
+        break;
+      default:
+        console.log("Invalid option, please try again.");
+        init();
+        break;
     }
   }
-
-// TODO: Create functions for each action
-// - View all departments, roles, and employees.
-// - Add a department, role, and employee.
-// - Update an employee's role.
-
-// TODO: Call the initialize function to start the application
+  
+  // TODO: Create a function to view all departments
+  // TODO: Create a function to view all roles
+  // TODO: Create a function to view all employees
+  // TODO: Create a function to add a department
+  // TODO: Create a function to add a role
+  // TODO: Create a function to add an employee
+  // TODO: Create a function to update an employee's role
+  
+  init();
