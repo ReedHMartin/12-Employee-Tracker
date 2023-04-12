@@ -1,5 +1,9 @@
--- TODO: Insert sample data into the `department` table
--- - Insert 3 different departments.
+-- Insert sample data into the `department` table
+INSERT INTO department (name)
+VALUES
+  ('Human Resources'),
+  ('Engineering'),
+  ('Sales');
 
 -- TODO: Insert sample data into the `role` table
 -- - Insert 5 different roles with unique titles, salaries, and corresponding department_ids.
