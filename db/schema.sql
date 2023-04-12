@@ -1,6 +1,8 @@
--- TODO: Create the schema for the `department` table
--- - id: INT PRIMARY KEY
--- - name: VARCHAR(30) to hold department name
+-- Create the schema for the `department` table
+CREATE TABLE department (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(30) NOT NULL
+);
 
 -- TODO: Create the schema for the `role` table
 -- - id: INT PRIMARY KEY
