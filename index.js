@@ -27,7 +27,17 @@ const mainMenuPrompt = [
     },
   ];
 
-// TODO: Create the function to initialize the application
+// Function to initialize the application
+async function init() {
+    // Display the main menu using inquirer prompts and call corresponding functions based on user input
+    const { action } = await inquirer.prompt(mainMenuPrompt);
+    switch (action) {
+      case "View all departments":
+        viewAllDepartments();
+        break;
+      // ... Other cases for different actions
+    }
+  }
 
 // TODO: Create functions for each action
 // - View all departments, roles, and employees.
