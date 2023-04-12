@@ -200,6 +200,49 @@ async function addRole() {
   init();
 }
 
+// Function to add an employee
+async function addEmployee() {
+  const roles = await role.viewAllRoles();
+  const roleChoices = roles.map((role) => ({
+    name: role.title,
+    value: role.id,
+  }));
+
+  const employees = await employee.viewAllEmployees();
+  const employeeChoices = employees.map((emp) => ({
+    name: `${emp.first_name} ${emp.last_name}`,
+    value: emp.id,
+  }));
+
+  const { firstName, lastName, roleId, managerId } = await inquirer.prompt([
+    {
+      type: "input",
+      name: "firstName",
+      message: "Enter the employee's first name:",
+    },
+    {
+      type: "input",
+      name: "lastName",
+      message: "Enter the employee's last name:",
+    },
+    {
+      type: "list",
+      name: "roleId",
+      message: "Select the employee's role:",
+      choices: roleChoices,
+    },
+    {
+      type: "list",
+      name: "managerId",
+      message: "Select the employee's manager:",
+      choices: [{ name: "None", value: null }, ...employeeChoices],
+    },
+  ]);
+
+  await employee.addEmployee(firstName, lastName, roleId, managerId);
+  console.log("Employee added!");
+  init();
+}
 
 >>>>>>> abce3b8 (Added function to add role.)
   // TODO: Create a function to add an employee
