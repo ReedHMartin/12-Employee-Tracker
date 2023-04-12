@@ -14,7 +14,14 @@ VALUES
   ('HR Assistant', 40000, 1),
   ('Sales Associate', 50000, 3);
 
--- TODO: Insert sample data into the `employee` table
--- - Insert 8 different employees with unique first_name and last_name combinations, role_ids, and manager_ids.
--- - Make sure the role_ids match the roles inserted earlier.
--- - Set the manager_id for each employee to reference other employee ids or set it to NULL for employees without a manager.
+-- Insert sample data into the `employee` table
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES
+  ('John', 'Doe', 1, NULL),
+  ('Jane', 'Smith', 2, 1),
+  ('Alice', 'Johnson', 3, 1),
+  ('Bob', 'Brown', 4, 1),
+  ('Charlie', 'Davis', 5, 3),
+  ('David', 'Garcia', 2, 2),
+  ('Ella', 'Hernandez', 5, 3),
+  ('Fiona', 'Martinez', 5, 3);
