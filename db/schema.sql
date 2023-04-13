@@ -1,3 +1,11 @@
+CREATE DATABASE IF NOT EXISTS employee_tracker;
+USE employee_tracker;
+
+
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS role;
+DROP TABLE IF EXISTS department;
+
 -- Create the schema for the `department` table
 CREATE TABLE department (
   id INT AUTO_INCREMENT PRIMARY KEY,
