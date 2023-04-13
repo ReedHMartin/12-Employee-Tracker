@@ -62,10 +62,6 @@ async function init() {
     }
   }
   
-  Here is the updated code with the remaining todos completed:
-
-  javascript
-  Copy code
   // - Import required packages
   // - Import inquirer
   const inquirer = require("inquirer");
