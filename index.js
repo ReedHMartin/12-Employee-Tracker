@@ -7,6 +7,8 @@ const cTable = require("console.table");
 const Department = require("./lib/Department");
 const Employee = require("./lib/Employee");
 const Role = require("./lib/Role");
+const department = new Department(connection);
+
 
 // Set up inquirer prompt configurations for main menu
 const mainMenuPrompt = [
