@@ -61,77 +61,7 @@ async function init() {
         break;
     }
   }
-  
-  // - Import required packages
-  // - Import inquirer
-  const inquirer = require("inquirer");
-  // - Import console.table
-  const cTable = require("console.table");
-  // - Import the Department, Employee, and Role classes
-  const Department = require("./lib/Department");
-  const Employee = require("./lib/Employee");
-  const Role = require("./lib/Role");
-  
-  const connection = require("./config/connection");
-  
-  const department = new Department(connection);
-  const role = new Role(connection);
-  const employee = new Employee(connection);
-  
-  // Set up inquirer prompt configurations for main menu
-  const mainMenuPrompt = [
-    {
-      type: "list",
-      name: "action",
-      message: "What would you like to do?",
-      choices: [
-        "View All Departments",
-        "View All Roles",
-        "View All Employees",
-        "Add Department",
-        "Add Role",
-        "Add Employee",
-        "Update Employee Role",
-        "Exit",
-      ],
-    },
-  ];
-  
-  // Function to initialize the application
-  async function init() {
-    const { action } = await inquirer.prompt(mainMenuPrompt);
-    switch (action) {
-      case "View All Departments":
-        viewAllDepartments();
-        break;
-      case "View All Roles":
-        viewAllRoles();
-        break;
-      case "View All Employees":
-        viewAllEmployees();
-        break;
-      case "Add Department":
-        addDepartment();
-        break;
-      case "Add Role":
-        addRole();
-        break;
-      case "Add Employee":
-        addEmployee();
-        break;
-      case "Update Employee Role":
-        updateEmployeeRole();
-        break;
-      case "Exit":
-        process.exit();
-        break;
-      default:
-        console.log("Invalid option, please try again.");
-        init();
-        break;
-    }
-  }
-  
+    
   // Function to view all departments
   async function viewAllDepartments() {
     const departments = await department.viewAllDepartments();
