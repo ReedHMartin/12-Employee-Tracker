@@ -215,4 +215,8 @@ async function updateEmployeeRole() {
   init();
 }
   
+const department = new Department();
+const employee = new Employee();
+const role = new Role();
+
   init();

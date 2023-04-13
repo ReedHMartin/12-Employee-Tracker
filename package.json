@@ -4,14 +4,14 @@
     "description": "A command-line application to manage a company's employee database",
     "main": "index.js",
     "scripts": {
-      "start": "node index.js"
+        "start": "node index.js"
     },
     "dependencies": {
-      "console.table": "^0.10.0",
-      "inquirer": "^8.2.0",
-      "mysql2": "^2.3.3"
+        "console.table": "^0.10.0",
+        "dotenv": "^16.0.3",
+        "inquirer": "^8.2.0",
+        "mysql2": "^2.3.3"
     },
     "author": "Reed Martin",
     "license": "ISC"
-  }
-  
+}
