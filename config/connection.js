@@ -1,23 +1,26 @@
 // Import MySQL2 package
 const mysql = require("mysql2");
 
+// Load environment variables from .env file
+require('dotenv').config();
+
 // Set up MySQL connection
 const connectionConfig = {
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "",
-    database: "employee_tracker_db",
-  };
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
+};
 
 // Create MySQL connection using the config object
-const connection = mysql.createConnection(connectionConfig);
+const connection = mysql.createPool(connectionConfig);
 
 // Connect to MySQL server and SQL database
-connection.connect((err) => {
-    if (err) throw err;
-    console.log("Connected to the database.");
-  });
+connection.getConnection((err) => {
+  if (err) throw err;
+  console.log('Connected to the database.');
+});
   
   // Export connection object
   module.exports = connection;
