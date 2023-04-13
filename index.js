@@ -13,7 +13,25 @@ const Department = require("./lib/Department");
 const Employee = require("./lib/Employee");
 const Role = require("./lib/Role");
 
-const { DB_NAME } = process.env;
+
+
+const { DB_NAME, DB_USER, DB_PASSWORD, DB_HOST } = process.env;
+
+// Create a connection pool to reuse connections
+const pool = mysql.createPool({
+  host: DB_HOST,
+  user: DB_USER,
+  password: DB_PASSWORD,
+  database: DB_NAME,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+});
+
+// Create new instances of the Department, Employee, and Role classes
+const department = new Department(pool);
+const employee = new Employee(pool);
+const role = new Role(pool);
 
 // Set up inquirer prompt configurations for main menu
 const mainMenuPrompt = [
@@ -214,9 +232,4 @@ async function updateEmployeeRole() {
   console.log("Employee role updated!");
   init();
 }
-  
-const department = new Department();
-const employee = new Employee();
-const role = new Role();
-
   init();
