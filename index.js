@@ -1,14 +1,19 @@
 // - Import required packages
+// - Import Mysql
+const mysql = require('mysql2/promise');
+// Load environment variables from .env file
+require("dotenv").config();
 // - Import inquirer
 const inquirer = require("inquirer");
 // - Import console.table
 const cTable = require("console.table");
+
 // - Import the Department, Employee, and Role classes
 const Department = require("./lib/Department");
 const Employee = require("./lib/Employee");
 const Role = require("./lib/Role");
-const department = new Department(connection);
 
+const { DB_NAME } = process.env;
 
 // Set up inquirer prompt configurations for main menu
 const mainMenuPrompt = [
